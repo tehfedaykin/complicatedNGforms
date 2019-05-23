@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>Handling Angular 2+ Forms Without Losing Your Sanity</title>
+		<title>Handling Angular Forms Without Losing Your Sanity</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/black.css">
@@ -25,11 +25,11 @@
 		<div class="reveal">
 			<div class="slides">
 				<section id="title" data-background="img/avril-emo.gif">
-					<h1>Handling Angular 2+ Forms Without Losing Your Sanity</h1>
+					<h1>Handling Angular Forms Without Losing Your Sanity</h1>
 					<h3>Jennifer Wadella</h3>
 				</section>
 				<section id="sponsors">
-					<h2>Thanks to All Our Sponsors</h2>
+					<h2>Thanks to All Our Sponsors!</h2>
 				</section>
 				<section id="me">
 					<div class="speaker-title">
@@ -44,10 +44,9 @@
 						</div>
 					</div>
 					<ul class="small">
-						<li>9-5 Remote Software Engineer</li>
-						<li>Nonprofit Founder/Director</li>
+						<li>JavaScript Developer at <a href="https://www.bitovi.com">Bitovi</a></li>
 						<li>International Speaker</li>
-						<li>Aspiring crazy plant lady</li>
+						<li>Kombucha brewin' crazy plant lady</li>
 					</ul>
 					<div class="warning">
 						<img class="plain" src="img/mature.png" alt="">
@@ -484,7 +483,6 @@
 					<svg height="25" width="23" transform='translate(-415 -310), scale(2)'>
 						<polygon points="9.9, 1.1, 3.3, 21.78, 19.8, 8.58, 0, 8.58, 16.5, 21.78"
 						style="fill:#ffd055"
-
 						/>
 					</svg>
 					<div class="kc-overlay fragment">
@@ -495,7 +493,7 @@
 				<section id="inspo">
 					<p>“Why’d you have to go and make things so complicated?”</p>
 					<img class="plain scaled" src="img/avril1.jpg" alt="">
-					<p> - Avril Lavigne, implementing Angular forms in 2018</p>
+					<p> - Avril Lavigne, implementing Angular forms in 2019</p>
 				</section>
 				<!----------------------------------------->
 				<section id="form-types">
@@ -506,40 +504,15 @@
 
 					<section id="template-module">
 						<h2>Template Driven Forms Imports</h2>
-						<pre>
-							<code data-trim data-noescape>
-	import { NgModule } from '@angular/core';
-	import { BrowserModule } from '@angular/platform-browser';
-	import { FormsModule } from '@angular/forms';
-
-	@NgModule({
-	  imports: [BrowserModule, FormsModule],
-	  declarations: [AppComponent],
-	  bootstrap: [AppComponent]
-	})
-	export AppModule {}
-							</code>
-						</pre>
+						<a target="_blank" href="https://carbon.now.sh/?bg=rgba(0%2C0%2C0%2C1)&t=monokai&wt=none&l=application%2Ftypescript&ds=true&dsyoff=3px&dsblur=6px&wc=false&wa=true&pv=12px&ph=18px&ln=false&fm=Hack&fs=14px&lh=133%25&si=false&es=2x&wm=false&code=import%2520%257B%2520NgModule%2520%257D%2520from%2520%27%2540angular%252Fcore%27%253B%250Aimport%2520%257B%2520BrowserModule%2520%257D%2520from%2520%27%2540angular%252Fplatform-browser%27%253B%250Aimport%2520%257B%2520FormsModule%2520%257D%2520from%2520%27%2540angular%252Fforms%27%253B%250A%250A%2540NgModule(%257B%250A%2520%2520imports%253A%2520%255BBrowserModule%252C%2520FormsModule%255D%252C%250A%2520%2520declarations%253A%2520%255BAppComponent%255D%252C%250A%2520%2520bootstrap%253A%2520%255BAppComponent%255D%250A%257D)%250Aexport%2520AppModule%2520%257B%257D">
+							<img class="plain" src="img/code/template-driven.png" alt="template driven example">
+						</a>
 					</section>
 					<section id="template-html">
 						<h2>Template Driven Forms Markup</h2>
-						<pre>
-							<code data-trim data-noescape>
-&lt;form&gt;
-  &lt;label for=&quot;name&quot;&gt;Name&lt;/label&gt;
-  &lt;input class=&quot;form-control&quot; name=&quot;name&quot; ngModel&gt;
-
-  &lt;label for=&quot;description&quot;&gt;Description&lt;/label&gt;
-  &lt;input class=&quot;form-control&quot; name=&quot;description&quot; ngModel&gt;
-
-  &lt;label for=&quot;source&quot;&gt;Source&lt;/label&gt;
-  &lt;input class=&quot;form-control&quot; name=&quot;source&quot; ngModel&gt;
-
-  &lt;label for=&quot;url&quot;&gt;Url&lt;/label&gt;
-  &lt;input class=&quot;form-control&quot; name=&quot;url&quot; ngModel&gt;
-&lt;/form&gt;
-							</code>
-						</pre>
+						<a target="_blank" href="https://carbon.now.sh/embed/?bg=rgba(0%2C0%2C0%2C1)&t=monokai&wt=none&l=htmlmixed&ds=true&dsyoff=3px&dsblur=6px&wc=false&wa=true&pv=12px&ph=18px&ln=false&fm=Hack&fs=14px&lh=133%25&si=false&es=2x&wm=false&code=%253Cform%253E%250A%2520%2520%253Clabel%2520for%253D%2522name%2522%253EName%253C%252Flabel%253E%250A%2520%2520%253Cinput%2520class%253D%2522form-control%2522%2520name%253D%2522name%2522%2520ngModel%253E%250A%250A%2520%2520%253Clabel%2520for%253D%2522description%2522%253EDescription%253C%252Flabel%253E%250A%2520%2520%253Cinput%2520class%253D%2522form-control%2522%2520name%253D%2522description%2522%2520ngModel%253E%250A%250A%2520%2520%253Clabel%2520for%253D%2522source%2522%253ESource%253C%252Flabel%253E%250A%2520%2520%253Cinput%2520class%253D%2522form-control%2522%2520name%253D%2522source%2522%2520ngModel%253E%250A%250A%2520%2520%253Clabel%2520for%253D%2522url%2522%253EUrl%253C%252Flabel%253E%250A%2520%2520%253Cinput%2520class%253D%2522form-control%2522%2520name%253D%2522url%2522%2520ngModel%253E%250A%253C%252Fform%253E">
+							<img class="plain" src="img/code/template-form.png" alt="template form example">
+						</a>
 					</section>
 					<section id="template-meh">
 						<h2>Template Driven Forms ...</h2>
@@ -549,67 +522,85 @@
 				<section id="reative-overview">
 					<section id="reactive-module">
 						<h2>Reactive Forms Imports</h2>
-						<pre>
-							<code data-trim data-noescape>
-	import { NgModule } from '@angular/core';
-	import { BrowserModule } from '@angular/platform-browser';
-	import { ReactiveFormsModule } from '@angular/forms';
-
-	@NgModule({
-	  imports: [BrowserModule, ReactiveFormsModule],
-	  declarations: [AppComponent],
-	  bootstrap: [AppComponent]
-	})
-	export AppModule {}
-							</code>
-						</pre>
+						<a target="_blank" href="https://carbon.now.sh/embed/?bg=rgba(0%2C0%2C0%2C0)&t=monokai&wt=none&l=application%2Ftypescript&ds=true&dsyoff=3px&dsblur=6px&wc=false&wa=true&pv=12px&ph=18px&ln=false&fm=Hack&fs=14px&lh=133%25&si=false&es=2x&wm=false&code=import%2520%257B%2520NgModule%2520%257D%2520from%2520'%2540angular%252Fcore'%253B%250Aimport%2520%257B%2520BrowserModule%2520%257D%2520from%2520'%2540angular%252Fplatform-browser'%253B%250Aimport%2520%257B%2520ReactiveFormsModule%2520%257D%2520from%2520'%2540angular%252Fforms'%253B%250A%250A%2540NgModule(%257B%250A%2520%2520imports%253A%2520%255BBrowserModule%252C%2520ReactiveFormsModule%255D%252C%250A%2520%2520declarations%253A%2520%255BAppComponent%255D%252C%250A%2520%2520bootstrap%253A%2520%255BAppComponent%255D%250A%257D)%250Aexport%2520AppModule%2520%257B%257D">
+							<img class="plain" style="max-height:500px;" src="img/code/reactive-forms-import.png" alt="reactive form example">
+						</a>
 					</section>
 					<section id="reactive-component">
 						<h2>Reactive Forms Component</h2>
-						<pre>
-							<code data-trim data-noescape>
-import { Component } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
-
-@Component({
-  selector: 'recipe',
-  templateUrl: './recipe.component.html',
-  styleUrls: ['./recipe.component.less']
-})
-export class RecipeComponent {
-  recipeForm = new FormGroup({
-    name: new FormControl(''),
-    description: new FormControl(''),
-    source: new FormControl(''),
-    url: new FormControl(''),
-  });
-}
-							</code>
-						</pre>
+						<a target="_blank" href="https://carbon.now.sh/embed/?bg=rgba(0,0,0,0)&t=monokai&wt=none&l=application/typescript&ds=true&dsyoff=3px&dsblur=6px&wc=false&wa=true&pv=12px&ph=18px&ln=false&fm=Hack&fs=14px&lh=133%25&si=false&es=2x&wm=false&code=import%2520%257B%2520Component%2520%257D%2520from%2520%27%2540angular%252Fcore%27%253B%250Aimport%2520%257B%2520FormGroup%252C%2520FormControl%2520%257D%2520from%2520%27%2540angular%252Fforms%27%253B%250A%250A%2540Component(%257B%250A%2520%2520selector%253A%2520%27recipe%27%252C%250A%2520%2520templateUrl%253A%2520%27.%252Frecipe.component.html%27%252C%250A%2520%2520styleUrls%253A%2520%255B%27.%252Frecipe.component.less%27%255D%250A%257D)%250Aexport%2520class%2520RecipeComponent%2520%257B%250A%2520%2520recipeForm%2520%253D%2520new%2520FormGroup(%257B%250A%2520%2520%2520%2520name%253A%2520new%2520FormControl(%27%27)%252C%250A%2520%2520%2520%2520description%253A%2520new%2520FormControl(%27%27)%252C%250A%2520%2520%2520%2520source%253A%2520new%2520FormControl(%27%27)%252C%250A%2520%2520%2520%2520url%253A%2520new%2520FormControl(%27%27)%252C%250A%2520%2520%257D)%253B%250A%257D">
+							<img class="plain" style="max-height:500px;" src="img/code/reactive-form-component.png" alt="reactive form example">
+						</a>
 					</section>
 					<section id="reactive-html">
 						<h2>Reactive Forms Markup</h2>
-						<pre>
-							<code data-trim data-noescape>
-&lt;form [formGroup]=&quot;recipeForm&quot;&gt;
-  &lt;label for=&quot;name&quot;&gt;Name&lt;/label&gt;
-  &lt;input class=&quot;form-control&quot; formControlName=&quot;name&quot;&gt;
-
-  &lt;label for=&quot;description&quot;&gt;Description&lt;/label&gt;
-  &lt;input class=&quot;form-control&quot; formControlName=&quot;description&quot;&gt;
-
-  &lt;label for=&quot;source&quot;&gt;Source&lt;/label&gt;
-  &lt;input class=&quot;form-control&quot; formControlName=&quot;source&quot;&gt;
-
-  &lt;label for=&quot;url&quot;&gt;Url&lt;/label&gt;
-  &lt;input class=&quot;form-control&quot; formControlName=&quot;url&quot;&gt;
-&lt;/form&gt;
-							</code>
-						</pre>
+						<a target="_blank" href="https://carbon.now.sh/embed/?bg=rgba(0,0,0,0)&t=monokai&wt=none&l=htmlmixed&ds=true&dsyoff=3px&dsblur=6px&wc=false&wa=true&pv=12px&ph=18px&ln=false&fm=Hack&fs=14px&lh=133%25&si=false&es=2x&wm=false&code=%253Cform%2520%255BformGroup%255D%253D%2522recipeForm%2522%253E%250A%2520%2520%253Clabel%2520for%253D%2522name%2522%253EName%253C%252Flabel%253E%250A%2520%2520%253Cinput%2520class%253D%2522form-control%2522%2520formControlName%253D%2522name%2522%253E%250A%250A%2520%2520%253Clabel%2520for%253D%2522description%2522%253EDescription%253C%252Flabel%253E%250A%2520%2520%253Cinput%2520class%253D%2522form-control%2522%2520formControlName%253D%2522description%2522%253E%250A%250A%2520%2520%253Clabel%2520for%253D%2522source%2522%253ESource%253C%252Flabel%253E%250A%2520%2520%253Cinput%2520class%253D%2522form-control%2522%2520formControlName%253D%2522source%2522%253E%250A%250A%2520%2520%253Clabel%2520for%253D%2522url%2522%253EUrl%253C%252Flabel%253E%250A%2520%2520%253Cinput%2520class%253D%2522form-control%2522%2520formControlName%253D%2522url%2522%253E%250A%253C%252Fform%253E">
+							<img class="plain" style="max-height:500px;" src="img/code/reactive-form-template.png">
+						</a>
 					</section>
 					<section id="reactive-forms-yay">
 						<h2>Reactive Forms ...</h2>
 						<img class="plain" src="img/nicki-yas.gif" alt="">
+					</section>
+				</section>
+				<!----------------------------------------->
+				<section id="reactive-form-crash-course">
+					<section id="reactive-concepts">
+							<h2>Reactive Forms Crash Course</h2>
+							<ul>
+								<li class="fragment">Reactive Form: a model-driven approach to handling form inputs whose values change over time. </li>
+								<li class="fragment">Form Control: basic form building block to create an input/radio/select/etc. <i>Tracks the value and validation status.</i></li>
+								<li class="fragment">Form Group: a group of form controls.</li>
+								<li class="fragment">Form Array: an array of form controls.</li>
+								<li class="fragment">FormControlName: directive that ties form element to a formControl.</li>
+								<li class="fragment">FormBuilder: shorthand syntax for creating groups and arrays</li>
+							</ul>
+					</section>
+					<section id="formControl">
+						<h2>Form Control</h2>
+						<p>The basic element of building Angular forms is the <b>FormControl</b>. This is a class that represents that input 
+							element on a page with a name value you’re likely used to seeing.</p>
+							<p class="fragment">Any piece of information we want to collect in 
+							a form, whether it’s an input, select, dropdown, or custom element needs to have a representative FormControl. 
+							The `[formControl]` directive is used to bind the input element in the DOM to it’s respective FormControl.</p>
+					</section>
+					<section id="form-control-code">
+						<img class="plain" style="max-height:500px;" src="img/code/form-control.png" />
+					</section>
+					<section id="form-group">
+						<h2>Form Group</h2>
+						<p><b>FormGroup</b> is the class that allows us to group a number of controls together. It also extends the 
+							AbstractControl class, meaning we can track the validity and value of all the FormControls in a FormGroup 
+							together.</p>
+							<p class="fragment">This allows us to easily manage our form as a whole. The `[formGroup]` directive binds the 
+							FormGroup to a DOM element.</p>
+					</section>
+					<section id="form-group-code">
+						<img class="plain" style="max-height:500px;" src="img/code/form-group.png" />
+					</section>
+					<section id="form-array">
+						<h2>Form Array</h2>
+						<p><b>FormArray</b> is a class that aggregates FormControls into an array, similar to FormGroup creating an 
+							object from FormControls.</p>
+							<p class="fragment">FormArrays can have controls pushed to them or removed from them similar to 
+							the way you’d manipulate an array in vanilla JS, and offer us a lot of power and flexibility when creating 
+							nested and dynamic forms.</p>
+					</section>
+					<section id="form-array-code-component">
+						<img class="plain" style="max-height:500px;" src="img/code/form-array-component.png" />
+					</section>
+					<section id="form-array-code-template">
+						<img class="plain" style="max-height:500px;" src="img/code/form-array-html.png" />
+					</section>
+					<section id="form-builder">
+						<h2>Form Builder</h2>
+						<p>Repeatedly typing <i>new FormControl('')</i>, <i>new FormGroup({})</i>, and <i>new FormArray([])</i> can become a bit 
+							tedious, especially when creating larger forms.</p>
+							<p class="fragment">Angular has shorthand syntax we can use thanks 
+							to the <b>FormBuilder</b> class.</p>
+					</section>
+					<section id="form-builder-coder">
+						<img class="plain" style="max-height:500px;" src="img/code/form-builder-ex.png" />
 					</section>
 				</section>
 				<!----------------------------------------->
@@ -624,7 +615,6 @@ export class RecipeComponent {
 					</ol>
 				</section>
 				<section id="avril-complicated" data-background="img/complicated1.gif">
-
 				</section>
 				<!----------------------------------------->
 				<section id="demo-code">
@@ -640,7 +630,8 @@ export class RecipeComponent {
 					<section id="1-markup">
 						<p>Let's say we only want the subcategories <br />
 							field to be required if categories has a value</p>
-						<pre>
+							<img class="plain" style="max-height: 500px" src="img/code/1-markup.png" />
+						<!-- <pre>
 							<code data-trim data-noescape>
 &lt;form [formGroup]=&quot;recipeForm&quot; (ngSubmit)=&quot;onSubmit()&quot;&gt;
   &lt;div class=&quot;form-group&quot;&gt;
@@ -648,7 +639,7 @@ export class RecipeComponent {
     &lt;div&gt;
       &lt;ng-container *ngFor=&quot;let category of categories&quot;&gt;
         &lt;div class=&quot;form-check form-check-inline&quot;&gt;
-          &lt;input class=&quot;form-check-input&quot; type=&quot;radio&quot; [value]=&quot;category.id&quot; formControlName=&quot;category&quot;&gt;
+          &lt;input class=&quot;form-check-input&quot; type=&quot;radio&quot; 3[value]=&quot;category.id&quot; formControlName=&quot;category&quot;&gt;
           &lt;label class=&quot;form-check-label&quot;&gt;{{category.name}}&lt;/label&gt;
         &lt;/div&gt;
       &lt;/ng-container&gt;
@@ -660,11 +651,12 @@ export class RecipeComponent {
   &lt;/div&gt;
 &lt;/form&gt;
 							</code>
-						</pre>
+						</pre> -->
 					</section>
 					<section id="1-component-formBuilder">
 						<p>k, so initially subcategory is unrequired</p>
-						<pre>
+						<img class="plain" style="max-height: 500px" src="img/code/1-component-formBuilder.png" />
+						<!-- <pre>
 							<code data-trim data-noescape>
 this.recipeForm = this.fb.group({
   name: [null, Validators.required],
@@ -677,80 +669,28 @@ this.recipeForm = this.fb.group({
 });
 this.onChanges();
 							</code>
-						</pre>
+						</pre> -->
 					</section>
 					<section id="1-step-1">
 						<h3>Step One</h3>
-						<p>Subscribe to changes on the field that <br />
-							determines other fields' requiredness</p>
-					</section>
-					<section id="1-step-1-code">
-						<pre>
-							<code data-trim data-noescape>
-onChanges() {
-  this.recipeForm.get('category').valueChanges.subscribe(val => {
-  });
-}
-							</code>
-						</pre>
+						<p>Subscribe to changes on the field that determines other fields' requiredness</p>
+						<img class="plain" style="max-height: 500px" src="img/code/1-step-1-code.png" />
 					</section>
 					<section id="1-step-2">
 						<h3>Step Two</h3>
-						<p>Get fields control and use setValidators method.</p>
-					</section>
-					<section id="1-step-2-code">
-						<pre>
-							<code data-trim data-noescape>
-onChanges() {
-  this.recipeForm.get('category').valueChanges.subscribe(val => {
-    const subCategoryControl = this.recipeForm.get('subcategory');
-    if (val) {
-      subCategoryControl.setValidators(Validators.required);
-    }
-    else {
-      subCategoryControl.setValidators(null);
-    }
-  });
-}
-							</code>
-						</pre>
+						<p>Get formControl and use setValidators method.</p>
+						<img class="plain" style="max-height: 500px" src="img/code/1-step-2.png" />
 					</section>
 					<section id="1-step-3">
 						<h3>Step Three</h3>
 						<p>Update changed fields validity.</p>
+						<img class="plain" style="max-height: 500px" src="img/code/1-step-3.png" />
 					</section>
-					<section id="1-step-3-code">
-						<pre>
-							<code data-trim data-noescape>
-onChanges() {
-  this.recipeForm.get('category').valueChanges.subscribe(val => {
-    const subCategoryControl = this.recipeForm.get('subcategory');
-    if (val) {
-      subCategoryControl.setValidators(Validators.required);
-      subCategoryControl.updateValueAndValidity();
-    }
-    else {
-      subCategoryControl.setValidators(null);
-      subCategoryControl.updateValueAndValidity();
-    }
-  });
-}
-							</code>
-						</pre>
-					</section>
+			
 					<section id="1-prepoluation">
 						<h3>What if...</h3>
 						<p>an option was supposed to be preselected based on data?</p>
-						<pre class="fragment">
-							<code data-trim data-noescape>
-onChanges() {
-  this.recipeForm.get('category').valueChanges.subscribe(val => {
-    const subCategoryControl = this.recipeForm.get('subcategory');
-    subCategoryControl.patchValue('my prepopulated data here');
-  });
-}
-							</code>
-						</pre>
+						<img class="plain fragment" style="max-height: 500px" src="img/code/1-prepoluation.png" />
 					</section>
 					<section id="problem-1-validation">
 						<h3>How 'bout some validation ya'll?</h3>
@@ -776,16 +716,7 @@ onChanges() {
 					</section>
 					<section id="preferred-validation-style">
 						<h3>My Preferred Validation</h3>
-						<pre>
-							<code>
-.ng-valid[required], .ng-valid.required  {
-	border-left: 5px solid #42A948; /* green */
-}
-.ng-touched.ng-invalid:not(form)  {
-	border-left: 5px solid #a94442; /* red */
-}
-							</code>
-						</pre>
+						<img class="plain" style="max-height: 500px" src="img/code/preferred-validation-style.png" />
 						<p>I like to highlight as the user touches fields, but then highlight required untouched fields on save.</p>
 					</section>
 					<section id="problem-1-highlight-untouched-code">
@@ -794,14 +725,7 @@ onChanges() {
 					</section>
 					<section id="problem-1-highlight-untouched-code">
 						<h2>Highlight untouched fields</h2>
-						<pre>
-							<code>
-Object.keys(this.recipeForm.controls).forEach(field => {
-  const control = this.recipeForm.get(field);
-  control.markAsTouched({ onlySelf: true });
-})
-							</code>
-						</pre>
+						<img class="plain" style="max-height: 500px" src="img/code/1-highlight-untouched-code.png" />
 					</section>
 				</section>
 				<!----------------------------------------->
@@ -812,12 +736,7 @@ Object.keys(this.recipeForm.controls).forEach(field => {
 					</section>
 					<section id="basic-validation">
 						<h3>Basic required validation</h3>
-						<pre>
-							<code>const control = new FormControl('some value', {
-  validators: Validators.required
-});
-							</code>
-						</pre>
+						<img class="plain" style="max-height: 500px" src="img/code/basic-validator.png" />
 						<p>We have several built-in validators at our disposal:</p>
 						<p class="small">min(), max(), required(), requiredTrue(), email(), minLength(),
 							<br />maxLength(), pattern(), nullValidator(), compose(),
@@ -825,17 +744,7 @@ Object.keys(this.recipeForm.controls).forEach(field => {
 					</section>
 					<section id="pattern-validation">
 						<h3>Pattern validation two ways!</h3>
-						<pre>
-							<code>const control = new FormControl('some value', {
-	validators: Validators.pattern('[0-9]{5}')
-});
-
-const myDatePattern = "^\\d{2}\/\\d{2}\/\\d{4}$";
-const otherControl = new FormControl('some value', {
-  validators: Validators.pattern(myDatePattern)
-});
-							</code>
-						</pre>
+						<img class="plain" style="max-height: 500px" src="img/code/validate-2-ways.png" />
 						<p>Note the double escaping - the Regex needs a string representation of \d.
 							<br /><span class="small">This trolled the crap out of me at one point in time.</span></p>
 					</section>
@@ -846,23 +755,9 @@ const otherControl = new FormControl('some value', {
 					</section>
 					<section id="function-validation">
 						<h3>Function validation</h3>
-						<pre>
-							<code>amountValidator(c: FormControl) {
-  return c.value > 340 ? null : {
-    validAmount: {
-      valid: false
-    }
-  };
-}
-const control = new FormControl('some value', {
-  validators: [Validators.required, amountValidator]
-});
-
-							</code>
-						</pre>
+						<img class="plain" style="max-height: 500px" src="img/code/function-validation.png" />
 					</section>
 				</section>
-
 				<!----------------------------------------->
 				<section id="problem-3">
 					<section id="problem-3-overview">
@@ -876,54 +771,36 @@ const control = new FormControl('some value', {
 						<h2>Enter our hero - <br />the Control Value Accessor</h2>
 						<div class="fragment">
 							<p><br />Not as scary as it sounds - it's just a way to build a custom input.<br /></p>
-							<p><i>From the docs: Defines an interface that acts as a bridge between the Angular forms API and a native element in the DOM.</i></p>
+							<p><i>From the docs: Defines an <b>INTERFACE</b> that acts as a bridge between the Angular forms API and a native element in the DOM.</i></p>
 						</div>
 					</section>
 					<section id="cva-interface">
 						<h2>CVA Interface</h2>
-						<pre><code data-trim data-noescape>
-export interface ControlValueAccessor {
-  writeValue(obj: any) : void
-  registerOnChange(fn: any) : void
-  registerOnTouched(fn: any) : void
-}
-						</code></pre>
+						<img class="plain" style="max-height: 500px" src="img/code/cva-interface.png" />
 					</section>
 					<section id="writeValue">
 						<h2>write Value</h2>
-						<pre><code data-trim data-noescape>
-export interface ControlValueAccessor {
-  <mark>writeValue(obj: any) : void</mark>
-  registerOnChange(fn: any) : void
-  registerOnTouched(fn: any) : void
-}
-						</code></pre>
+						<img class="plain" style="max-height: 500px" src="img/code/cva-write.png" />
 						<p><br />Writes new value to the element.</p>
 					</section>
 					<section id="onChange">
 						<h2>register On Change</h2>
-						<pre><code data-trim data-noescape>
-export interface ControlValueAccessor {
-  writeValue(obj: any) : void
-  <mark>registerOnChange(fn: any) : void</mark>
-  registerOnTouched(fn: any) : void
-}
-						</code></pre>
+						<img class="plain" style="max-height: 500px" src="img/code/cva-change.png" />
 						<p><br />Registers a callback function that is called when
 							<br />the control's value changes in the UI.</p>
 					</section>
 					<section id="onTouched">
 						<h2>register On Touched</h2>
-						<pre><code data-trim data-noescape>
-export interface ControlValueAccessor {
-  writeValue(obj: any) : void
-  registerOnChange(fn: any) : void
-  <mark>registerOnTouched(fn: any) : void</mark>
-}
-						</code></pre>
+						<img class="plain" style="max-height: 500px" src="img/code/cva-touch.png" />
 						<p><br />Registers a callback function is called by the forms
 							<br />API on initialization to update the form model on blur.</p>
 					</section>
+					<section id="setDisabledState">
+							<h2>set Disabled State</h2>
+							<img class="plain" style="max-height: 500px" src="img/code/cva-disabled.png" />
+							<p><br />Returns a boolean value when a
+								<br />formControl's disabled status changes</p>
+						</section>
 					<section id="granular-control">
 						<p>CVA is great for granular control of displaying
 							<br />to the UI and communicating with the forms API</p>
@@ -944,21 +821,7 @@ export interface ControlValueAccessor {
 					<section id="reactive-typeahead">
 						<p>I want to <i>display the name</i> in my typeahead and<br />
 						<b>submit the id</b>, but my library doesn't allow for that.<br /></p>
-						<pre>
-							<code>[{
-  name: 'breakfast',
-  id: 1
-},{
-  name: 'lunch',
-  id: 2
-},
-{
-  name: 'appetizer',
-  id: 3
-}];
-							</code>
-						</pre>
-
+						<img class="plain" style="max-height: 500px" src="img/code/data-structure.png" />
 					</section>
 					<section id="wrap-cva">
 						<h3>Let's wrap it in a component
@@ -967,123 +830,25 @@ export interface ControlValueAccessor {
 					</section>
 					<section id="cva-wrapper">
 						<h3>Building our wrapper</h3>
-						<pre>
-							<code>import { Component, OnInit, Input, forwardRef } from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
-
-@Component({
-  selector: 'my-typeahead',
-  templateUrl: './typeahead.component.html',
-  providers: [
-    {
-      provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => MyTypeaheadComponent),
-      multi: true
-    }
-  ]
-})
-export class MyTypeaheadComponent implements ControlValueAccessor, OnInit {
-  @Input() data: any[];
-  @Input('value') _value = null;
-  onChange: any = () => { };
-  onTouched: any = () => { };
-
-  get value() {
-    return this._value;
-  }
-
-  set value(val) {
-    this._value = val;
-  }
-
-  registerOnChange( fn : any ) : void {
-    this.onChange = fn;
-  }
-
-  registerOnTouched( fn : any ) : void {
-    this.onTouched = fn;
-  }
-
-  writeValue(value) {
-    this.value = value;
-  }
-}
-
-							</code>
-						</pre>
+						<img class="plain" style="max-height: 500px" src="img/code/cva-setup.png" />
+					</section>
+					<section id="cva-continued">
+						<h3>Implementing the CVA interface</h3>
+						<img class="plain" style="max-height: 500px" src="img/code/cva-continued.png" />
 					</section>
 					<section id="some-html">
 						<h2>sum html</h2>
-						<pre>
-							<code>&lt;ng-template #itemTemplate let-model=&quot;item&quot;&gt;
-      {{model[displayVal]}}
-    &lt;/ng-template&gt;
-&lt;input
-  class=&quot;form-control&quot;
-  [(ngModel)]=&quot;selected&quot;
-  [typeahead]=&quot;data&quot;
-  [typeaheadOptionField]=&quot;displayVal&quot;
-  [typeaheadItemTemplate]=&quot;itemTemplate&quot;
-  [typeaheadMinLength]=&quot;0&quot;
-  (typeaheadOnSelect)=&quot;onSelect($event)&quot;
-  (blur)=&quot;onBlur($event)&quot;
-&gt;
-
-							</code>
-						</pre>
+						<img class="plain" style="max-height: 500px" src="img/code/typeahead-html.png" />
 						<p>(Using the <a href="https://valor-software.com/ngx-bootstrap/#/typeahead" target="_blank">ngx-bootstrap</a> typeahead component.)</p>
 					</section>
 					<section id="plug-into-form">
 						<h3>Hook into our form</h3>
-						<pre>
-							<code>
-&lt;form [formGroup]=&quot;mealForm&quot;&gt;
-  &lt;div class=&quot;form-group&quot;&gt;
-    &lt;label for=&quot;recipe&quot;&gt;Recipe&lt;/label&gt;
-    &lt;my-typeahead formControlName=&quot;recipe&quot; [data]=&quot;recipes&quot;&gt;&lt;/my-typeahead&gt;
-  &lt;/div&gt;
-&lt;/form&gt;
-							</code>
-						</pre>
+						<img class="plain" style="max-height: 500px" src="img/code/hook-into-form.png" />
 					</section>
 					<section id="what-about-prepopulating">
 						<h3>What if I need to prepopulate a value
 							<br />because I'm editing an existing form?</h3>
-					</section>
-					<section id="cva-value-input-wrapper">
-						<h3>We already have access to the
-							<br />value in our wrapper!</h3>
-						<pre>
-							<code data-trim data-noescape>
-export class MyTypeaheadComponent implements ControlValueAccessor, OnInit {
-  @Input() data: any[];
-  <mark>@Input('value') _value;</mark>
-  onChange: any = () => { };
-  onTouched: any = () => { };
-
-  get value() {
-    return this._value;
-  }
-
-  set value(val) {
-    this._value = val;
-  }
-
-  registerOnChange( fn : any ) : void {
-    this.onChange = fn;
-  }
-
-  registerOnTouched( fn : any ) : void {
-    this.onTouched = fn;
-  }
-
-  writeValue(value) {
-    this.value = value;
-  }
-}
-
-							</code>
-						</pre>
+							<p>Remember, the writeValue function will be called when it's formControl is initialized with a value!</p>
 					</section>
 					<section id="good-for-more">
 						<h3>Good for more than just
@@ -1106,80 +871,15 @@ export class MyTypeaheadComponent implements ControlValueAccessor, OnInit {
 					</section>
 					<section id="4-checkbox-component">
 						<h3>Our component CVA implementation</h3>
-						<pre>
-							<code>
-export class MyCheckboxesComponent implements ControlValueAccessor {
-  @Input() data: any[];
-
-  @Input('value') _value = [];
-  onChange: any = () => { };
-  onTouched: any = () => { };
-
-  get value() {
-    return this._value;
-  }
-
-  set value(val) {
-    this._value = val;
-    this.onChange(val);
-    this.onTouched();
-  }
-
-  registerOnChange( fn : any ) : void {
-    this.onChange = fn;
-  }
-
-  registerOnTouched( fn : any ) : void {
-    this.onTouched = fn;
-  }
-
-  writeValue(value:any) {
-    this.value = value;
-  }
-
-  selectCheckbox(checkboxId) {
-    const updatedArray = this.value;
-    updatedArray.push(checkboxId);
-    this.writeValue(updatedArray);
-  }
-
-  removeCheckbox(checkboxId) {
-    var index = this.value.indexOf(checkboxId);
-    if (index > -1) {
-      this.value.splice(index, 1);
-    }
-  }
-
-}
-
-							</code>
-						</pre>
+						<img class="plain" style="max-height: 500px" src="img/code/cva-checkbox-cut.png" />
 					</section>
 					<section id="4-checkbox-markup">
 						<h3>Our component markup</h3>
-						<pre>
-							<code>
-&lt;ng-container *ngFor=&quot;let item of data&quot;&gt;
-  &lt;div class=&quot;form-check form-check-inline&quot;&gt;
-    &lt;ng-container *ngIf=&quot;value &amp;&amp; value.includes(item.id)&quot;&gt;
-      &lt;input class=&quot;form-check-input&quot; type=&quot;checkbox&quot; value=&quot;{{item.id}}&quot; checked (click)=removeCheckbox(item.id)&gt;
-    &lt;/ng-container&gt;
-    &lt;ng-container *ngIf=&quot;!value || !value.includes(item.id)&quot;&gt;
-      &lt;input class=&quot;form-check-input&quot; type=&quot;checkbox&quot; value=&quot;{{item.id}}&quot; (click)=selectCheckbox(item.id)&gt;
-    &lt;/ng-container&gt;
-    &lt;label class=&quot;form-check-label&quot; &gt;{{item.name}}&lt;/label&gt;
-  &lt;/div&gt;
-&lt;/ng-container&gt;
-							</code>
-						</pre>
+						<img class="plain" style="max-height: 500px" src="img/code/cva-checkbox-html.png" />
 					</section>
 					<section id="4-checkbox-in-form">
 						<h3>And In Our Form</h3>
-						<pre>
-							<code>
-&lt;my-checkboxes formControlName=&quot;subcategory&quot; [data]=&quot;subcategories&quot;&gt;&lt;/my-checkboxes&gt;
-							</code>
-						</pre>
+						<img class="plain" style="max-height: 500px" src="img/code/checkbox-in-form.png" />
 						<p>Seem familiar yet?</p>
 					</section>
 				</section>
@@ -1191,104 +891,28 @@ export class MyCheckboxesComponent implements ControlValueAccessor {
 						<br />remove form controls & form groups</p>
 					</section>
 					<section id="form-image">
-						<img src="img/ingredient-form.png" alt="">
+						<img src="img/ingredient-form.png" style="max-height: 600px;" alt="">
 					</section>
 					<section id="problem-5-component">
 						<h3>Creating the nested form</h3>
-						<pre>
-							<code data-trim data-noescape>
-this.recipeForm = this.fb.group({
-  name: [null, Validators.required],
-  description: [null],
-  source: [null],
-  category: [null],
-  subcategory: [[]],
-  <mark>ingredients: this.fb.array([]),</mark>
-  calories: [null, [Validators.required, this.amountValidator]]
-});
-							</code>
-						</pre>
+						<img class="plain" style="max-height: 500px" src="img/code/nested-form.png" />
 					</section>
 					<section id="problem-5-component-add">
 						<h3>Adding a nested form group</h3>
-						<pre>
-							<code data-trim data-noescape>
-public addIngredient() {
-  const ingredientsFormArray = <FormArray>this.recipeForm.controls['ingredients'];
-  const ingredientFormGroup = new FormGroup({
-    name: new FormControl(null, [Validators.required]),
-    amount: new FormControl(null, [Validators.required])
-  });
-  ingredientsFormArray.push(ingredientFormGroup);
-}
-							</code>
-						</pre>
+						<img class="plain" style="max-height: 500px" src="img/code/add-formGroup.png" />
 					</section>
 					<section id="problem-5-component-remove">
 						<h3>Removing a nested form group</h3>
-						<pre>
-							<code data-trim data-noescape>
-public removeIngredient(i) {
-  const ingredientsFormArray = <FormArray>this.recipeForm.controls['ingredients'];
-  ingredientsFormArray.removeAt(i);
-}
-							</code>
-						</pre>
+						<img class="plain" style="max-height: 500px" src="img/code/remove-formControl.png" />
 					</section>
 					<section id="problem-5-markup">
 						<h3>The Markup</h3>
-						<pre>
-							<code data-trim data-noescape>
-&lt;label for=&quot;ingredients&quot;&gt;Ingredients&lt;/label&gt;
-&lt;ng-container *ngFor=&quot;let ingredient of recipeForm.controls['ingredients'].controls; let i = index&quot; &gt;
-  &lt;div [formGroup]=&quot;ingredient&quot; class=&quot;row&quot;&gt;
-    &lt;div class=&quot;form-group col-sm&quot;&gt;
-      &lt;label for=&quot;name&quot;&gt;Name&lt;/label&gt;
-      &lt;input class=&quot;form-control&quot; formControlName=&quot;name&quot; aria-describedby=&quot;name&quot;&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;form-group col-sm&quot;&gt;
-      &lt;label for=&quot;amount&quot;&gt;Amount&lt;/label&gt;
-      &lt;input class=&quot;form-control&quot; formControlName=&quot;amount&quot; aria-describedby=&quot;amount&quot;&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;col-sm&quot;&gt;
-      &lt;button class=&quot;btn btn-danger remove-ingredient&quot; (click)=&quot;removeIngredient(i)&quot;&gt;
-        &lt;fa-icon icon=&quot;times&quot;&gt;&lt;/fa-icon&gt;
-      &lt;/button&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/ng-container&gt;
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;col-sm&quot;&gt;
-    &lt;button type=&quot;button&quot; class=&quot;btn btn-success&quot; (click)=&quot;addIngredient()&quot;&gt;Add ingredient&lt;/button&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-							</code>
-						</pre>
+						<img class="plain" style="max-height: 500px" src="img/code/formarray-html.png" />
 						<p>Make sure to pass the nested formGroup model in!</p>
 					</section>
 					<section id="problem-5-validation">
 						<h3>Uhhhh, howtf do I validate this?</h3>
-						<pre>
-							<code>
-Object.keys(this.recipeForm.controls).forEach(field => {
-  const control = this.recipeForm.get(field);
-
-  if (!control['controls']) {
-    control.markAsTouched({ onlySelf: true });
-  }
-  else {
-    let nestedFormArray = control['controls'];
-    nestedFormArray.forEach(subcCtrlGp => {
-      Object.keys(subcCtrlGp['controls']).forEach(subField => {
-        const nestedControl = subcCtrlGp.get(subField);
-        nestedControl.markAsTouched({ onlySelf: true });
-      });
-    });
-    //can extract this to a recursive function for deeply nested forms
-  }
-})
-							</code>
-						</pre>
+						<img class="plain" style="max-height: 500px" src="img/code/validate-array.png" />
 					</section>
 				</section>
 				<!----------------------------------------->
@@ -1313,6 +937,11 @@ patchValue(value: any, opts: {
 									<br />and don't emit an event on your changes.</p>
 							</div>
 					</section>
+					<section id="initialize-form-control">
+						<p>When initializing a formControl to use with a component implementing the CVA interface the disabled status must be 
+							set(whether enabled or disabled) to ensure the formControl behaves properly.</p>
+					</section>
+
 				</section>
 				<!----------------------------------------->
 				<section id="summary">
@@ -1331,23 +960,19 @@ patchValue(value: any, opts: {
 				<!----------------------------------------->
 				<section id="questions">
 					<h2>Questions?</h2>
-					<img class="plain" src="img/headtilt.gif" alt="">
 					<p>Slides available at: <a href="https://tehfedaykin.github.io/complicatedNGforms/">tehfedaykin.github.io/complicatedNGforms</a></p>
-					<p>Don't forget to rate the session!</p>
+					<img class="plain" src="img/headtilt.gif" alt="">
+					<p>Need help with Angular? Work with me! <a href="mailto:jennifer@bitovi.com">jennifer@bitovi.com</a></p>
 					<p class="small"><a href="https://open.spotify.com/user/tehfedaykin/playlist/3pL1PQkrecy0yQkEBJQiVG?si=oxvR7MmoQUWaic1yb3qjrw">🎶 Pre-talk playlist 🎶</a> </p>
 				</section>
 			</div>
 		</div>
 		<div class="twitter-overlay">
-			<span>@likeOMGitsFEDAY</span> <span>#complicatedNGforms</span> <span>#RVAJavaScriptConf</span>
+			<span>@likeOMGitsFEDAY</span> <span>#complicatedNGforms</span> <span>#devsum</span>
 		</div>
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.js"></script>
-
 		<script>
-			// More info about config & dependencies:
-			// - https://github.com/hakimel/reveal.js#configuration
-			// - https://github.com/hakimel/reveal.js#dependencies
 			Reveal.initialize({
 				width: 1280,
 				height: 800,
