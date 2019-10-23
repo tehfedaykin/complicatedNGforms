@@ -8,7 +8,7 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./app.component.less']
 })
 export class FormComponent {
-  public myForm = new FormControl('initial value');
+  public myControl = new FormControl('initial value');
 }
 ```
 
