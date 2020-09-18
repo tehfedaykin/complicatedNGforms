@@ -33,7 +33,6 @@ export class TypeAheadComponent implements ControlValueAccessor {
   }
 
   writeValue(value) {
-    this.value = value;
     this.selectDropdown(value);
   }
 }

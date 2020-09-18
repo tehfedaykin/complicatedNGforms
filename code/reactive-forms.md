@@ -7,5 +7,5 @@
 ```
 
 ```typescript
-const name = new FormControl('Jennifer');
+public name: FormControl = new FormControl({value: 'Jennifer'}, Validators.required);
 ```

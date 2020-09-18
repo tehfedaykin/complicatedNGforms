@@ -408,3 +408,7 @@ span.block {
 	color: $linkColor;
 	font-weight: $headingFontWeight !important;
 }
+
+table code {
+	padding: 1em;
+}

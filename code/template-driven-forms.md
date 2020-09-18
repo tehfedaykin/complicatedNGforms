@@ -9,7 +9,7 @@ const model = {
 ```html
 <form>
   <label for="name">Name</form>
-  <input class="form-control" name="name" [(ngModel)]="model.name">
+  <input class="form-control" name="name" [(ngModel)]="model.name" required>
 </form>
 ```
 

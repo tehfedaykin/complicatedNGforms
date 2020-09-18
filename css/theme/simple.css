@@ -340,3 +340,6 @@ span.block {
 .accent {
   color: #00008B;
   font-weight: normal !important; }
+
+table code {
+  padding: 1em; }

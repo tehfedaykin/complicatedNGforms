@@ -1,6 +1,6 @@
 ## Highlight untouched fields
 
-Angular 8:
+Angular 8+:
 
 ```typescript
 this.mainForm.markAllAsTouched();
